@@ -10,7 +10,9 @@
     *   **Outdated info?**
     *   **Potential Problems?**
 4.  **Offer to Discuss Issues:** If issues found, offer to discuss with user.
-5.  **`.clinerules` Reference:** Refer to `.clinerules` for project rules.
+5.  **.clinerules` Reference:** Refer to project rules defined in:
+    *   `.clinerules` (General Project Rules)
+    *   `.clinerules-ask` (Ask Mode Specific Rules)
 
 **Example Proactive Response (if inconsistencies found):**
 Memory Bank reviewed. Inconsistency: activeContext.md says 'auth in progress', progress.md says 'auth completed'. Discuss status?
