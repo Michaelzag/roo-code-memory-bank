@@ -1,0 +1,91 @@
+## Advice for Using Roo Code in this "Meta" Memory Bank Improvement Project
+
+**1. Start in Architect Mode (for Analysis and Planning - As Before, but Emphasized for Public Benefit):**
+
+Architect mode remains the ideal starting point.  Use Architect mode to direct Roo Code to perform the initial analysis and planning tasks, especially for improving the `user-guide.md`.  Remember, the goal is to create a *publicly valuable and user-friendly resource*.  Architect mode's planning capabilities are crucial for structuring these improvements effectively for a broad audience.
+
+**2. Treat `/var/www/rc-memory-bank/memory-bank/` as the *Internal* Project Memory Bank (Crucial Distinction):**
+
+It is **absolutely vital** to consistently use the `memory-bank/` folder within your `/var/www/rc-memory-bank` project as the **private, internal Memory Bank *for this improvement project itself***.
+
+*   **Do not confuse it with the Memory Bank system *you are trying to improve* for Roo Code users.** This is your project's *working memory*, not the system you are documenting.
+*   Use this `memory-bank/` folder to meticulously track:
+    *   **Analysis Findings:** Document your and Roo Code's analysis of the `user-guide.md`, instruction modules, and Roo Code codebase.
+    *   **Revision Plans:** Record your plans for improving the documentation and instructions, section by section.
+    *   **Rationale for Changes:**  Clearly explain *why* you are making specific revisions.  This is crucial for long-term project understanding and for anyone reviewing the project later (including your future self and potential community contributors).
+    *   **Progress Tracking:** Use `progress.md` to maintain a clear log of tasks completed, files revised, and next steps within *this project*.
+    *   **`activeContext.md`:** Keep `activeContext.md` updated to reflect the immediate focus of your work *on this project*.
+
+*   **Remember: This `memory-bank/` folder is *NOT* intended for the public GitHub repository.** It is your private workspace for managing this improvement effort.
+
+**3. Leverage Roo Codebase Access for Deeper Analysis (New and Powerful):**
+
+A key new aspect is leveraging Roo Code's access to its own codebase (located in `/var/www/Roo-Code/`).  This opens up powerful possibilities for analysis and improvement:
+
+*   **Code-Informed Improvements:**  In Architect and Ask modes, **explicitly direct Roo Code to analyze its own source code** to understand the *implementation* of the Memory Bank system.  Use prompts like:
+    *   "Analyze the file `/var/www/Roo-Code/src/[relevant-file-path].ts` and explain how custom instructions are processed."
+    *   "Review the code in `/var/www/Roo-Code/src/[persistence-module].js` that handles Memory Bank saving and loading. Are there any potential performance bottlenecks or areas for increased robustness?"
+    *   "Based on the codebase, how is the `[MEMORY BANK: ACTIVE]` prefix actually used within Roo Code's logic?"
+*   **Targeted Code-Level Suggestions (Advanced):**  As you become more familiar with the codebase and Roo Code's analysis capabilities, you can move towards asking for *code-level improvement suggestions*. For example:
+    *   "Based on your analysis of `/var/www/Roo-Code/src/[persistence-module].js`, suggest code refactorings to improve the efficiency of Memory Bank loading."
+    *   "Are there any design patterns used in the Roo Code codebase that could be better documented in `systemPatterns.md` for users to understand the underlying architecture?"
+*   **Remember to use explicit file paths relative to `/var/www/Roo-Code/src/` in your prompts** to direct Roo Code to the relevant source files.
+
+**4. Iterative Workflow (Analyze -> Plan -> Code/Edit -> Test -> Document -> Repeat - Now Includes Public Repository Focus):**
+
+Maintain the iterative workflow, but now with an added emphasis on documentation and the public repository:
+
+*   **Architect Mode (Analyze & Plan):** Use Architect mode for in-depth analysis of documentation, instructions, and the Roo Code codebase.  Develop detailed revision plans, focusing on clarity, user-friendliness, and public value.
+*   **Code Mode (Code/Edit):** Use Code mode for the actual editing of files (`user-guide.md`, instruction modules).  Remember to use `[MEMORY BANK: ACTIVE]` prefix for all file operations.  Commit changes regularly to your **local Git repository** (`/var/www/rc-memory-bank/`).
+*   **Ask Mode (Review, Summarize, and Get Feedback):** Use Ask mode to review your progress, summarize analysis findings, and potentially even ask Roo Code for feedback on the clarity and completeness of your revised documentation drafts.
+*   **"Testing" (Qualitative and Public-Oriented):** "Testing" now has a stronger public focus.  "Testing" includes:
+    *   **Your Own Review:**  Critically review your revised `user-guide.md` and instructions as if you were a new Roo Code user.  Is it clear? Is it easy to follow? Is it helpful?
+    *   **(Future Step) Public Review and Feedback:**  Once you have a substantial set of improvements, consider:
+        *   **Sharing the `user-guide.md` draft publicly (e.g., in a Roo Code community forum or issue in your GitHub repository) and soliciting feedback from other Roo Code users.**
+        *   **Using the GitHub repository's issue tracking to gather feedback and manage improvement suggestions from the community.**
+*   **Documentation (Crucial for Public Value):**  **Documentation is now paramount.**  Meticulously document *every* step of your process in your project's `memory-bank/` folder, especially:
+    *   **Analysis Findings:**  Record key insights from your analysis of the user guide, instructions, and codebase.
+    *   **Rationale for Revisions:** Explain *why* you made specific changes.  This is essential for transparency and for others to understand your decisions.
+    *   **Next Steps and Open Issues:** Clearly outline what remains to be done and any open questions or challenges.
+
+**5. Focus on User-Centric and Publicly Valuable Improvements (User Guide as a Key Deliverable):**
+
+As emphasized in the updated `projectBrief.md`, prioritize improvements that enhance the **user experience and public value** of the Memory Bank system.  The `user-guide.md` is now a **key public deliverable**.  Focus on making it:
+
+*   **Clear, Concise, and Easy to Understand:** For a wide range of Roo Code users, including those new to the Memory Bank concept.
+*   **Practical and Actionable:**  Provide step-by-step instructions and practical examples.
+*   **Comprehensive and Complete:** Cover all essential aspects of the Memory Bank system.
+*   **Well-Organized and Structured:**  Use clear headings, formatting, and a logical flow to make the guide easy to navigate and read.
+
+**6. Be Explicit and Clear in Prompts (Especially When Referencing Codebase):**
+
+Maintain explicit and clear prompting, and **especially so when asking Roo Code to analyze its own codebase**.  Be precise about:
+
+*   **File Paths:**  Use full or relative file paths (especially relative to `/var/www/Roo-Code/src/`) when referencing code.
+*   **Specific Questions:**  Ask targeted questions about specific code sections, functionalities, or potential issues.
+*   **Desired Output:**  Clearly state what kind of output or analysis you expect from Roo Code.
+
+**7. "Update Memory Bank" Regularly (for *This Project's* Memory Bank - Local Repository Commits Also Important):**
+
+Continue to use "update memory bank" regularly within the `/var/www/rc-memory-bank` project to save your progress.
+
+**Crucially, also remember to regularly commit your changes to the *local Git repository* in `/var/www/rc-memory-bank/`.  This local Git history will be the basis for your *public GitHub repository*.**  Commit messages should be clear and descriptive, summarizing the changes you've made (both to documentation and your project's Memory Bank itself).
+
+**8. Initialize and Maintain the Public GitHub Repository (New Action Item):**
+
+*   **Create the Public Repository:** If you haven't already, create the public GitHub repository at `https://github.com/GreatScottyMac/roo-code-memory-bank-improvement` (or your chosen name).
+*   **Initialize Local Git Repository in `/var/www/rc-memory-bank/`:** If you haven't already, initialize a Git repository in your `/var/www/rc-memory-bank` directory:
+    ```bash
+    cd /var/www/rc-memory-bank
+    git init
+    ```
+*   **Connect Local to Remote:** Connect your local Git repository to the newly created public GitHub repository as the "origin" remote.  Follow GitHub's instructions for connecting a local repository to a remote.
+*   **Regularly Push to GitHub:**  As you make progress, commit your changes locally and regularly push them to your public GitHub repository:
+    ```bash
+    git add .
+    git commit -m "Your descriptive commit message"
+    git push origin main  (or git push origin master, depending on your branch setup)
+    ```
+    *   **Do NOT commit the `memory-bank/` folder to the public repository.** Ensure you have a `.gitignore` file in `/var/www/rc-memory-bank/` that excludes the `memory-bank/` directory.
+
+By following this updated advice, you will be well-equipped to use Roo Code to effectively improve its own Memory Bank system, leveraging its codebase access and creating a valuable, publicly accessible resource for the Roo Code community! Let me know how you'd like to proceed with the first steps in Architect mode.

@@ -1,0 +1,12 @@
+# Exclude internal memory bank
+memory-bank/
+
+# IDE files
+.vscode/
+.idea/
+
+# Node modules
+node_modules/
+
+# Logs
+*.log
