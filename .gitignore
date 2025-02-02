@@ -1,35 +1,9 @@
-# Dependency directories
-node_modules/
-bower_components/
+# Ignore everything by default
+*
 
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# But do NOT ignore these directories and their contents:
+!/docs
+!/custom-instructions
 
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# OS generated files
-.DS_Store
-
-# IDE/editor directories
-.vscode/
-
-# Build output
-dist/
-build/
-
-# Temporary files or project specific files
-Screenshot*.jpg
-PLAN_SYNC.md
-rc-mem-bank-tree.txt
-roo-code-memory-bank.md
-
-# Exclude memory bank directory
-memory-bank/
+# Also, do NOT ignore the .gitignore file itself
+!.gitignore
