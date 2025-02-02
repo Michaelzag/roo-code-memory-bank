@@ -1,0 +1,524 @@
+Roo Code Memory Bank: User Guide and Instruction Modules
+
+
+Maintain Project Context Across Sessions and Memory Resets
+
+
+This guide will walk you through using the Roo Code Memory Bank system, enhanced by Roo Code's built-in context-preserving features. This combination provides a robust solution for managing project context across sessions and handling Roo's periodic memory resets.
+
+
+Before You Begin
+
+
+The Roo Code Memory Bank is your project's persistent memory. It helps Roo Code remember important project details across sessions and memory resets, enabling more effective and consistent assistance.
+
+By using the Memory Bank, you ensure Roo Code has the necessary context to understand your project, provide relevant suggestions, and maintain continuity in your development workflow.
+
+
+Getting Started
+
+
+Follow these steps to set up and begin using the Memory Bank system:
+
+
+Prerequisites
+- VS Code with Roo Code extension installed (v1.2.0 or newer)
+- Basic understanding of Markdown syntax
+- Project folder setup in VS Code workspace
+
+
+First-Time Setup Checklist
+1. Create or Open a project directory in VS Code. (This is your project directory in VS Code where you want to use the Memory Bank.)
+2. Install the Roo Code extension from the VS Code Marketplace. (Ensure you have the Roo Code extension installed from the VS Code Marketplace.)
+3. Configure custom instructions via Roo Code settings. (Refer to the Roo Code settings to paste the custom instructions for optimal Memory Bank functionality. This is a one-time setup.)
+4. Switch to Architect Mode: Switch to Architect mode in the Roo Code chat interface. (In the Roo Code chat, switch to Architect mode to begin Memory Bank initialization.)
+5. Experience "Wakeup" Functionality: In Architect mode, send any initial prompt to Roo Code (even a simple greeting or single character). Roo Code will automatically:
+ - Scan your workspace for memory-bank/ directories.
+ - Detect Multiple Projects (if applicable): If multiple Memory Banks are found, Roo Code will prompt you to select the project for the session.
+ - Initialize/Load Memory Bank: Roo Code will initialize or load the Memory Bank for the selected (or single) project.
+ - Respond with Greeting & Next Steps: Roo Code will respond with a greeting and suggest a starting point for your architectural tasks.
+6. (Optional but Recommended) Create `projectBrief.md`:  Consider creating a `projectBrief.md` file at the root of your project. This file should briefly describe your project's goals, target audience, and key technologies. Providing a `projectBrief.md` enriches the initial context for Roo Code, leading to more relevant assistance.
+7. Initiate Memory Bank Initialization in Architect Mode: In Architect mode, ask 'Initialize Memory Bank' or 'Setup Memory Bank' if you want to explicitly re-initialize or review the Memory Bank setup. Otherwise, the "wakeup" functionality handles initial loading.
+8. Switch to Code Mode: Follow Roo Code's instructions and switch to Code mode as prompted. (Follow Roo Code's instructions and switch to Code mode as prompted.)
+9. Create Memory Bank Files in Code Mode (Following Roo's Plan): In Code mode, Roo Code will provide a detailed plan listing the memory-bank/ directory and the necessary files to create. Use Roo Code's file creation tools to create these files exactly as outlined in the plan. Ensure the memory-bank/ directory is at the root of your VS Code workspace.
+10. Start Documenting: Begin populating the newly created Memory Bank files with essential project information. Start with productContext.md to document the project overview and key technologies, and then update activeContext.md to reflect your current tasks and next steps.
+
+To further illustrate this process, the steps are as follows:
+
+Memory Bank Initialization Workflow (Automatic)
+
+1. Start: New Project in VS Code & Switch to Architect Mode
+2. Step 1: Roo Code (Architect Mode) detects missing `memory-bank/`
+3. Step 2: Roo Code (Architect Mode) presents Memory Bank Initialization Plan
+4. Step 3: User switches to Code Mode
+5. Step 4: User creates `memory-bank/` directory and files in Code Mode (following Roo's plan)
+6. End: Memory Bank Initialized & Active
+
+
+Handling Multiple Projects in a Workspace
+
+
+If you have multiple projects with their own Memory Banks within your VS Code workspace, Roo Code can automatically detect them and prompt you to select the target project for the current chat session.
+
+
+Automatic Project Detection and Selection:
+
+
+1. New Chat Session: When you start a new chat session in Architect or Code mode, Roo Code scans your workspace for `memory-bank/` directories.
+2. Multiple Memory Banks Found: If multiple `memory-bank/` directories are detected, Roo Code will display a prompt in the chat asking you to choose the project you want to work on.
+3. Project Selection Prompt: The prompt will list the detected projects with their directory paths, like this:
+
+     Multiple Memory Banks detected in your workspace. Please specify which project you would like to work on for this session:
+
+     1. Project: poptools-app (Directory: /var/www/poptools-app)
+     2. Project: Roo-Code (Directory: /var/www/Roo-Code)
+     3. Project: roo-code-memory-bank (Directory: /var/www/roo-code-memory-bank)
+
+     Please enter the number corresponding to your desired project.
+
+4. Select Your Project: Enter the number corresponding to the project you want to work with and press Enter.
+5. Context Loaded: Roo Code will then load the Memory Bank for the selected project and use it for the current chat session.
+
+Example Scenario:
+
+Imagine you have a workspace with two projects: webapp and mobile-app, each with its own `memory-bank/` directory. When you start a new chat in Architect mode, Roo Code will detect both Memory Banks and ask you:
+
+ Multiple Memory Banks detected in your workspace. Please specify which project you would like to work on for this session:
+
+ 1. Project: webapp (Directory: /var/www/webapp)
+ 2. Project: mobile-app (Directory: /var/www/mobile-app)
+
+ Please enter the number corresponding to your desired project.
+
+By selecting '1', you ensure that Roo Code uses the Memory Bank from your `webapp` project for this session.
+
+
+Organizing Multi-Project Workspaces:
+
+
+To effectively manage multiple projects with Memory Banks:
+
+* Keep Memory Banks at Project Roots: Ensure each project has its `memory-bank/` directory at the root level of its project directory.
+* Clear Project Names: Use descriptive names for your project directories to easily identify them in the project selection prompt.
+* Workspace Structure: Organize your workspace so that project directories are clearly separated.
+
+This automatic project detection and selection feature simplifies working with multiple projects and ensures Roo Code always has the correct project context for each session.
+
+
+Understanding Memory Bank Files
+
+
+Initializing the Memory Bank creates a `memory-bank/` folder containing three essential files: `productContext.md`, `activeContext.md`, and `progress.md`. Here's a breakdown of each file's purpose:
+
+
+memory-bank/productContext.md
+
+
+Purpose: Document the stable, long-term project context. Captures foundational knowledge consistent throughout the project.
+
+Think of it as: Project's "North Star" document. Provides enduring context.
+
+Content Examples:
+* Project Vision/Goals: Overall project aims and objectives.
+* Target Audience: Intended user base.
+* Key Technologies: Primary technologies, frameworks, libraries.
+* High-Level Architecture: Project's architectural design, main components.
+* Domain-Specific Knowledge: Relevant background info, domain expertise.
+
+Update Frequency: Infrequent. Update on significant shifts in project direction, target audience, or core tech stack.
+
+
+memory-bank/activeContext.md
+
+
+Purpose: Tracks dynamic, short-term context of your *current work & next steps*. Daily scratchpad for Roo Code.
+
+Think of it as: Your "Daily Task Log" for Roo. Keeps Roo focused on immediate priorities.
+
+Content Examples:
+* Current Task/Feature: Specific feature, bug fix, or task you're actively working on *now*.
+* Immediate Next Steps: Very next actions to progress on current task.
+* Open Questions/Decisions: Pending questions, decisions, roadblocks.
+* Technical Details (Short-Term): Temporary notes, code snippets, commands for current task.
+* Session-Specific Notes: Anything for Roo to remember *this session*.
+
+Update Frequency: Very frequent. Update at session start/end, and when focus shifts.
+
+
+memory-bank/progress.md
+
+
+Purpose: Provides high-level project progress & status overview. Tracks accomplishments and remaining tasks.
+
+Think of it as: Project's "Executive Summary". Quick snapshot of project status.
+
+Content Examples:
+* Work Done: Completed features, tasks, milestones (bullet points, short descriptions).
+* To Do: Concise list of remaining tasks/features.
+* Current Status Summary: Project's overall stage (e.g., "Alpha", "Beta", "Ready for release").
+* Completion Metrics (Optional): Simple metrics to track progress (e.g., "% core features complete").
+* Milestones/Deadlines (Optional): Key project milestones, target deadlines.
+
+Update Frequency: Regular. Update weekly or after significant progress.
+
+
+Advanced Usage Examples
+
+
+Memory Bank for Feature Development
+
+
+Scenario: Implementing User Authentication
+
+Initial State:
+
+You are starting to develop a new feature: user authentication for your application. The Memory Bank has already been initialized for your project, and you are ready to document the development process for this new feature within the Memory Bank. Currently, the application is publicly accessible without user accounts. You want to add user registration, login, and secure session management to enhance security and personalize the user experience.
+
+Memory Bank Updates:
+
+Throughout the feature development process, you would update your Memory Bank files as follows:
+
+* memory-bank/productContext.md: Update this file to reflect the addition of the new feature and any relevant technology choices.
+
+    # memory-bank/productContext.md
+
+    Project Overview
+    This project is a [briefly describe your application - e.g., "task management web application"].
+    We are adding user authentication to enhance security and personalize user experience.
+
+    Key Technologies
+    - [List existing technologies]
+    - OAuth 2.0 (for social login - *Decision needed: which provider?*)
+    - JWT (JSON Web Tokens) for session management
+    - bcrypt (for password hashing)
+
+* memory-bank/activeContext.md:  Use this file to track the current tasks, next steps, and open questions related to the user authentication feature.
+
+    # memory-bank/activeContext.md
+
+    Current Task
+    Developing user authentication feature.
+
+    Next Steps
+    - 1. Plan database schema for user credentials.
+    - 2. Implement user registration API endpoint.
+    - 3. Implement user login API endpoint.
+    - 4. Implement JWT-based authentication middleware.
+
+    Open Questions
+    - Which OAuth 2.0 provider to use (Google, GitHub, etc.)?
+    - Password complexity requirements?
+    - Session management strategy (e.g., refresh tokens)?
+
+* memory-bank/progress.md: Update this file regularly to track the progress of the user authentication feature.
+
+    # memory-bank/progress.md
+
+    Work Done
+    - [Initially empty]
+    - [After completing database schema design]: - Database schema for user credentials designed and documented.
+    - [After implementing registration API]: - User registration API endpoint implemented and tested (basic functionality).
+    - [Continue updating as tasks are completed]
+
+    To Do
+    - [Initially, list all planned tasks]
+    - Plan database schema for user credentials.
+    - Implement user registration API endpoint.
+    - Implement user login API endpoint.
+    - Implement JWT-based authentication middleware.
+    - Implement frontend integration for login/registration.
+    - Implement session management.
+    - Implement password reset functionality.
+    - Write unit and integration tests for authentication.
+    - [Update as tasks are completed and new tasks emerge]
+
+    Current Status
+    User authentication feature - In development - Database schema design in progress.
+    - [Update status as development progresses] - User authentication feature - In development - User registration API implemented, working on login API.
+    - [Upon completion] - User authentication feature - Completed and integrated.
+
+* .clinerules-code (Optional - Feature Specific Rules):  You could add rules to `.clinerules-code` to enforce specific code style or security practices for authentication-related code.  For example, you might add linting rules to ensure proper password handling or API security best practices are followed.  *(Example `.clinerules-code` content not shown for brevity, but mentioned as a possibility)*
+
+Benefits:
+
+Using the Memory Bank in this way helps you:
+
+* Plan and document the feature comprehensively.
+* Track tasks, progress, and open questions systematically.
+* Maintain context across development sessions.
+* Communicate feature status and details effectively with team members (if applicable).
+
+
+Memory Bank for Refactoring Existing Codebase
+
+
+Scenario: Refactoring a Complex Code Module
+
+Initial State:
+
+You have identified a complex code module (e.g., a large utility class or a tightly coupled function) in your existing codebase that has become difficult to understand and maintain. The Memory Bank has already been initialized for your project, and you are ready to document the refactoring process within the Memory Bank. You want to refactor this module to improve its readability, modularity, and overall maintainability.
+
+Memory Bank Updates:
+
+Throughout the refactoring process, you would update your Memory Bank files as follows:
+
+* memory-bank/productContext.md:  You might optionally update this file to reflect the ongoing refactoring effort, especially if it's a significant project-wide refactoring. In most cases, it might not be necessary to update `productContext.md` for individual module refactoring.
+
+* memory-bank/activeContext.md: Use this file to plan and track the refactoring process, document the refactoring strategy, and list files to be refactored.
+
+    # memory-bank/activeContext.md
+
+    Current Task
+    Refactoring complex `utils/legacy_module.py` module.
+
+    Refactoring Strategy
+    - 1. Analyze `utils/legacy_module.py`: Understand its functionality, identify areas of complexity, and potential refactoring targets (e.g., large functions, code duplication, tight coupling).
+    - 2. Break down into smaller modules/functions: Decompose the monolithic module into smaller, more focused modules or functions with clear responsibilities.
+    - 3. Improve naming and documentation:  Rename variables, functions, and classes for clarity. Add docstrings and comments to explain complex logic.
+    - 4. Write unit tests:  Write unit tests for the refactored modules/functions to ensure functionality is preserved and to prevent regressions.
+    - 5. Gradually refactor and test: Refactor piece by piece, running unit tests after each step to validate changes.
+
+    Files to Refactor
+    - `utils/legacy_module.py`
+    - [Potentially list specific functions or classes within the module]
+
+    Refactoring Progress
+    - [Initially empty]
+    - [After analysis]: - Analysis of `utils/legacy_module.py` completed. Refactoring strategy documented.
+    - [After decomposition]: - Core functions decomposed into smaller modules in `utils/refactored_module/`.
+    - [Continue updating as refactoring progresses]
+
+    Open Questions
+    -  Are there any dependencies on `utils/legacy_module.py` that need to be considered during refactoring? (Need to investigate codebase)
+    -  What is the estimated time for refactoring this module? (Need to estimate based on complexity)
+
+* memory-bank/decisionLog.md: Use `decisionLog.md` to record significant decisions made during the refactoring process, especially if there are trade-offs or alternative approaches considered.
+
+    # memory-bank/decisionLog.md
+
+    Refactoring `utils/legacy_module.py` - Decisions
+
+    - [Date]: Decision: To decompose `legacy_module.py` into smaller modules based on functional areas (e.g., input validation, data processing, output formatting).
+        - Rationale: Improves modularity, testability, and maintainability compared to keeping it as a single monolithic module.
+        - Alternatives Considered:  Refactoring in-place without decomposition (Rejected - less impactful for long-term maintainability).
+
+    - [Date]: Decision: To use descriptive naming conventions and add comprehensive docstrings to all refactored functions and classes.
+        - Rationale:  Significantly improves code readability and understandability for future developers.
+        - Alternatives Considered: Minimal documentation (Rejected - insufficient for complex legacy code).
+
+    - [Continue adding decisions as refactoring progresses]
+
+
+* memory-bank/progress.md: Update `progress.md` to track the overall progress of the refactoring effort.
+
+    # memory-bank/progress.md
+
+    Work Done
+    - [Initially empty]
+    - [After analysis and planning]: - Refactoring plan for `utils/legacy_module.py` documented in `activeContext.md` and `decisionLog.md`.
+    - [After decomposition]: - Core functions of `legacy_module.py` decomposed into smaller modules in `utils/refactored_module/`.
+    - [Continue updating as refactoring progresses]
+
+    To Do
+    - [Initially, list all refactoring tasks]
+    - Analyze `utils/legacy_module.py`.
+    - Decompose into smaller modules/functions.
+    - Improve naming and documentation.
+    - Write unit tests for refactored modules.
+    - Gradually refactor and test each module.
+    - Integrate refactored modules into the existing codebase.
+    - Verify overall application functionality after refactoring.
+    - [Update as tasks are completed and new tasks emerge]
+
+    Current Status
+    Refactoring `utils/legacy_module.py` - Planning phase complete. - Analysis and refactoring strategy documented.
+    - [Update status as refactoring progresses] - Refactoring `utils/legacy_module.py` - In progress - Core functions decomposition completed. Working on improving naming and documentation.
+    - [Upon completion] - Refactoring `utils/legacy_module.py` - Completed and verified.
+
+Benefits:
+
+Using the Memory Bank in this way helps you:
+
+* Plan and manage complex refactoring efforts systematically.
+* Document refactoring strategy, decisions, and progress.
+* Maintain context and track open questions throughout the refactoring process.
+* Improve team collaboration and knowledge sharing during refactoring.
+
+
+Memory Bank for Bug Fixing
+
+
+Scenario: Debugging and Fixing User Login Bug
+
+Initial State:
+
+Users are reporting that they are unable to log in to the application. Initial investigation suggests a potential bug in the user login functionality. You need to investigate, identify the root cause, and implement a fix.
+
+Memory Bank Updates:
+
+Throughout the bug fixing process, you would update your Memory Bank files as follows:
+
+* memory-bank/activeContext.md: Use this file to document bug details, reproduction steps, investigation progress, debugging steps, and potential solutions.
+
+    # memory-bank/activeContext.md
+
+    Current Task
+    Debugging and fixing user login bug.
+
+    Bug Details
+    - Symptom: Users cannot log in; login form submits but redirects back to login page with "Invalid credentials" error (even with correct credentials).
+    - Reported by: Multiple users (see support tickets #123, #124, #125).
+    - Affected users:  Seems to affect all users.
+    - Environment:  Reported across all browsers and platforms.
+    - Last known working version: v1.2.0 (suspect regression in v1.2.1).
+
+    Reproduction Steps
+    1. Go to login page.
+    2. Enter valid username and password.
+    3. Submit login form.
+    4. Observe redirect back to login page with "Invalid credentials" error.
+
+    Investigation Progress
+    - [Initially empty]
+    - [After initial investigation]: - Checked server logs - no errors related to authentication.
+    - [Checked authentication code]: - Reviewed `auth/login.py` - no obvious code errors, but need to step through debugger.
+    - [Next step]: - Set up debugging environment and step through login process to identify where authentication fails.
+
+    Potential Solutions
+    - [Initially empty]
+    - [After initial debugging]: - Potential issue with password hashing logic after recent library update? Need to verify password hashing process.
+    - [List potential fixes as they are identified]
+
+* memory-bank/decisionLog.md: Use `decisionLog.md` to record debugging steps, findings, and fix implementation decisions, especially if you try multiple approaches or need to make trade-offs.
+
+    # memory-bank/decisionLog.md
+
+    Bug Fix - User Login Bug - Decisions
+
+    - [Date]: Debugging Step: Stepped through `auth/login.py` in debugger, focusing on password hashing logic.
+        - Findings:  Password hashing logic seems correct, but noticed that the password comparison function is returning False even for valid passwords.
+
+    - [Date]: Decision: Investigate password comparison function and bcrypt library version.
+        - Rationale: Suspect incompatibility issue with bcrypt library after recent update, potentially causing incorrect password comparison.
+        - Alternatives Considered: Reverting bcrypt library version (Chosen - quickest way to verify if bcrypt version is the issue).
+
+    - [Date]: Decision: Reverted bcrypt library version to previous version (vX.X.X). Tested login - login now working.
+        - Findings: Reverting bcrypt version fixed the login bug. Confirms bcrypt version incompatibility.
+        - Next Steps:  Document bcrypt version incompatibility issue. Investigate root cause of incompatibility and potential long-term solution (e.g., update bcrypt version and adjust code if needed, or pin bcrypt version).
+
+    - [Continue adding decisions and findings as debugging and fixing progresses]
+
+
+* memory-bank/progress.md: Update `progress.md` to track the bug fix status and verification.
+
+    # memory-bank/progress.md
+
+    Work Done
+    - [Initially empty]
+    - [After initial investigation]: - User login bug reported and documented in `activeContext.md`. Initial investigation and debugging started.
+    - [After identifying bcrypt issue]: - Root cause identified - bcrypt library version incompatibility. Temporary fix implemented by reverting bcrypt version.
+    - [Continue updating as bug fix progresses]
+
+    To Do
+    - [Initially, list all bug fixing tasks]
+    - Investigate user login bug.
+    - Identify root cause of login failure.
+    - Implement temporary fix (bcrypt version revert).
+    - Verify temporary fix (login functionality working).
+    - Investigate long-term solution for bcrypt incompatibility.
+    - Implement long-term fix (if needed).
+    - Write unit/integration tests to prevent regression.
+    - Deploy bug fix to production.
+    - Monitor login functionality after deployment.
+    - [Update as tasks are completed and new tasks emerge]
+
+    Current Status
+    User login bug - Investigating - Root cause identified (bcrypt version incompatibility). Temporary fix implemented and verified.
+    - [Update status as bug fix progresses] - User login bug - Fix implemented and verified. - Temporary fix deployed to production. Monitoring login functionality.
+    - [Upon completion of long-term fix] - User login bug - Fixed (long-term solution implemented). - Long-term fix implemented and deployed. Regression tests added.
+
+Benefits:
+
+Using the Memory Bank in this way helps you:
+
+* Systematically debug and troubleshoot complex issues.
+* Document bug details, investigation steps, and decisions.
+* Track bug fix progress and status.
+* Maintain context and ensure thoroughness in the bug fixing process.
+* Facilitate knowledge sharing and collaboration on bug fixes.
+
+
+Troubleshooting
+
+
+`[MEMORY BANK: ACTIVE]` Prefix Not Working
+
+Solution:
+1. Check Custom Instructions: Ensure all custom instruction modules are correctly pasted into Roo Code "Prompts" settings in VS Code, especially "Mode-specific Custom Instructions/Code".
+2. Save Settings: Verify that VS Code settings were saved after pasting instructions.
+3. Confirm Code Mode: Ensure you are in "Code" mode when using `[MEMORY BANK: ACTIVE]` prefix (check Roo Code chat interface).
+4. Check Prefix Syntax: Verify exact syntax: `[MEMORY BANK: ACTIVE]` (case-sensitive, spacing).
+
+
+Memory Bank Not Persisting After VS Code Restart
+
+Solution:
+1. Verify Memory Bank Initialization: Confirm that you have initiated the Memory Bank initialization process by switching to Architect mode in a new project (see "Getting Started" section). Check if the `memory-bank/` folder and essential files were created at the project root after following the initialization plan provided by Roo Code in Architect mode.
+2. Initial Mode Switch: After VS Code restart, switch to "Ask" or "Architect" mode *first* to trigger Memory Bank loading.
+3. Use `update memory bank` Command:  Use `update memory bank` at session end to explicitly save and prepare Memory Bank.
+4. Check File Paths: Verify `memory-bank/` folder is at project root; incorrect paths prevent Memory Bank access.
+
+
+.clinerules Rules Not Applied
+
+Solution:
+1. File Location: Ensure `.clinerules` files (`.clinerules`, `.clinerules-code`, etc.) are at project root, alongside `memory-bank/` folder.
+2. Syntax Check: Verify `.clinerules` file syntax; incorrect syntax may cause rules to be ignored.
+3. Mode Relevance: Note that `.clinerules-code`, `.clinerules-architect`, `.clinerules-ask` are mode-specific.
+4. Restart Roo Code (Rare):  Restart Roo Code in VS Code after major `.clinerules` changes to reload rules.
+
+
+Memory Bank Files Not Updating/Saving
+
+Solution:
+1. File Permissions: Check write permissions for `memory-bank/` folder and files.
+2. VS Code Errors: Check VS Code console for file saving errors.
+3. Conflicting Extensions: Temporarily disable extensions that might interfere with saving.
+4. Disk Space: Ensure sufficient free disk space is available.
+
+If issues persist, consult the Roo Code documentation or community support channels for further assistance.
+
+
+Revised Guidance on "Update Memory Bank" Command:
+
+
+While not strictly *required* after every break, the `update memory bank` command is a best practice for session management and long-term project context preservation.
+
+To visualize this session management process, refer to the workflow diagram below:
+
+
+Session Management Workflow (`update memory bank` Command)
+
+
+1. Start: Working on Project (Any Mode)
+2. Step 1: User makes changes to Memory Bank files (`productContext.md`, `activeContext.md`, `progress.md`, etc.)
+3. Step 2: Session End or Break?
+ Yes: User initiates `update memory bank` command in chat
+ No: Continue Working (Loop back to Step 1)
+4. Step 3: Roo Code saves current state of Memory Bank files
+5. Step 4: Memory Bank is prepared for next session
+6. End: Session Managed & Memory Bank Updated
+
+
+Think of it as:
+* `[MEMORY BANK: ACTIVE]` Prefix:  Ensures Roo uses *documented, reliable* project context in Code mode (important for memory resets).
+* `update memory bank` Command: "Save project knowledge" command. Use it to:
+  * Update Memory Bank at session end/breaks.
+  * Prepare for VS Code closure/workspace switch.
+  * Create project history checkpoints.
+
+
+Key Takeaway:
+
+
+Roo Code's new context features are a welcome enhancement. However, the Memory Bank system remains the cornerstone of persistent, structured project knowledge management for Roo. By using both effectively – leveraging Roo Code's features for in-session convenience and the Memory Bank for long-term reliability and structured documentation – you create a powerful and robust development workflow with Roo. Continue to prioritize maintaining your Memory Bank as your project's long-term memory and use `update memory bank` strategically to ensure its accuracy and completeness across sessions.
