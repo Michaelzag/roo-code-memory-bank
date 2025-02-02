@@ -158,20 +158,19 @@ When you initialize the Memory Bank, you create a `memory-bank/` folder with thr
 **Update Frequency:** Regular. Update weekly or after significant progress.
 
 **Think of it as:** Project's "Executive Summary". Quick snapshot of project status.
+* Continue working seamlessly in any mode.
 
-239 |     *   Continue working seamlessly in any mode.
-240 | 
-241 | **Revised Guidance on "Update Memory Bank" Command:**
-242 | 
-243 | The `update memory bank` command is now even more of a **best practice for session management and long-term project context preservation**, rather than being strictly *required* for every single break due to Roo Code's chat history persistence.
-244 | 
-245 | **Think of it as:**
-246 | *   **`[MEMORY BANK: ACTIVE]` prefix in Code Mode:** Ensures Roo operates within the *documented, reliable* project context during coding tasks, especially important for handling potential internal memory resets.
-247 | *   **`update memory bank` command:** Your "save project knowledge" command. Use it to:
-248 |     *   Ensure the Memory Bank is up-to-date at the end of work sessions or before breaks.
-249 |     *   Prepare for VS Code closure or workspace switching.
-250 |     *   Create explicit checkpoints in your project's documented history.
-251 | 
-252 | **Key Takeaway:**
-253 | 
-254 | Roo Code's new context features are a welcome enhancement. However, the Memory Bank system remains the cornerstone of persistent, structured project knowledge management for Roo. By using both effectively – leveraging Roo Code's features for in-session convenience and the Memory Bank for long-term reliability and structured documentation – you create a powerful and robust development workflow with Roo. Continue to prioritize maintaining your Memory Bank as your project's long-term memory and use `update memory bank` strategically to ensure its accuracy and completeness across sessions.
+## Revised Guidance on "Update Memory Bank" Command:
+
+The `update memory bank` command is now even more of a **best practice for session management and long-term project context preservation**, rather than being strictly *required* for every single break due to Roo Code's chat history persistence.
+
+**Think of it as:**
+* **`[MEMORY BANK: ACTIVE]` prefix in Code Mode:** Ensures Roo operates within the *documented, reliable* project context during coding tasks, especially important for handling potential internal memory resets.
+* **`update memory bank` command:** Your "save project knowledge" command. Use it to:
+  * Ensure the Memory Bank is up-to-date at the end of work sessions or before breaks.
+  * Prepare for VS Code closure or workspace switching.
+  * Create explicit checkpoints in your project's documented history.
+
+**Key Takeaway:**
+
+Roo Code's new context features are a welcome enhancement. However, the Memory Bank system remains the cornerstone of persistent, structured project knowledge management for Roo. By using both effectively – leveraging Roo Code's features for in-session convenience and the Memory Bank for long-term reliability and structured documentation – you create a powerful and robust development workflow with Roo. Continue to prioritize maintaining your Memory Bank as your project's long-term memory and use `update memory bank` strategically to ensure its accuracy and completeness across sessions.
