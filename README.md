@@ -49,18 +49,21 @@ First-Time Setup Checklist
 
     *   **Locate "Roo Code: Custom Instructions" Section:** Scroll down or look for the section titled "Roo Code: Custom Instructions".
 
+        <br>
+        <img src="https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/docs/images/custom-instruction-modules.jpg" alt="Custom Instruction Modules" width="600">
+        <br>
     *   **Copy and Paste Instructions:** For **each** setting in this section, carefully copy the **entire content** of the specified file from the `roo-code-memory-bank/custom-instructions/` directory and paste it directly into the corresponding "Roo Code: Custom Instructions" setting in VS Code.
 
         *   **Important:** Ensure you copy the *complete content* of each file.
 
         *   **Settings and Files to Copy:**
-            -   **"Global Instructions"**:  Copy from `global-instructions.md` (General instructions for all modes)
-            -   **"Mode-specific Instructions/Architect"**: Copy from `mode-arch.md` (Architect mode instructions)
-            -   **"Mode-specific Instructions/Ask"**: Copy from `mode-ask.md` (Ask mode instructions)
-            -   **"Mode-specific Instructions/Code"**: Copy from `mode-code.md` (Code mode instructions)
-            -   **"Role Description/Architect"**: Copy from `role-arch.md` (Architect mode role definition)
-            -   **"Role Description/Ask"**: Copy from `role-ask.md` (Ask mode role definition)
-            -   **"Role Description/Code"**: Copy from `role-code.md` (Code mode role definition)
+            -   **"Global Instructions"**:  Copy from [`global-instructions.md`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/global-instructions.md) (General instructions for all modes)
+            -   **"Mode-specific Instructions/Architect"**: Copy from [`mode-arch.md`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/mode-arch.md) (Architect mode instructions)
+            -   **"Mode-specific Instructions/Ask"**: Copy from [`mode-ask.md`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/mode-ask.md) (Ask mode instructions)
+            -   **"Mode-specific Instructions/Code"**: Copy from [`mode-code.md`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/mode-code.md) (Code mode instructions)
+            -   **"Role Description/Architect"**: Copy from [`role-arch.md`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/role-arch.md) (Architect mode role definition)
+            -   **"Role Description/Ask"**: Copy from [`role-ask.md`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/role-ask.md) (Ask mode role definition)
+            -   **"Role Description/Code"**: Copy from [`role-code.md`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/role-code.md) (Code mode role definition)
 
     *   **Settings are Auto-Saved:** Once you paste the content into each setting field, VS Code automatically saves it. You only need to do this configuration once.
 
