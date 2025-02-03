@@ -1,4 +1,4 @@
-Roo Code Memory Bank: User Guide and Instruction Modules
+<font size="+2">**Roo Code Memory Bank: User Guide and Instruction Modules**</font>
 
 
 Maintain Project Context Across Sessions and Memory Resets
@@ -7,7 +7,7 @@ Maintain Project Context Across Sessions and Memory Resets
 This guide will walk you through using the Roo Code Memory Bank system, enhanced by Roo Code's built-in context-preserving features. This combination provides a robust solution for managing project context across sessions and handling Roo's periodic memory resets.
 
 
-Before You Begin
+**Before You Begin**
 
 
 Welcome to Roo Code Memory Bank!
@@ -23,19 +23,19 @@ Think of the Memory Bank as your project's long-term memory. It empowers Roo Cod
 By setting up and utilizing the Memory Bank, you unlock the full potential of Roo Code for persistent and effective project support. Let's get started!
 
 
-Getting Started
+**Getting Started**
 
 
 Follow these steps to set up and begin using the Memory Bank system:
 
 
-Prerequisites
+**Prerequisites**
 - VS Code with Roo Code extension installed (v1.2.0 or newer)
 - Basic familiarity with Markdown syntax.
 - Project folder open in VS Code workspace
 
 
-First-Time Setup Checklist
+**First-Time Setup Checklist**
 1. Create or Open a project directory in VS Code. (This is your project directory in VS Code where you want to use the Memory Bank.)
 2. Install the Roo Code extension from the VS Code Marketplace. (Ensure you have the Roo Code extension installed from the VS Code Marketplace.)
 3. **Configure Custom Instructions (Crucial Step):**  To ensure Roo Code and Memory Bank function correctly, you need to configure Custom Instructions in VS Code settings. This is a **one-time setup**.
@@ -49,9 +49,6 @@ First-Time Setup Checklist
 
     *   **Locate "Roo Code: Custom Instructions" Section:** Scroll down or look for the section titled "Roo Code: Custom Instructions".
 
-        <br>
-        <img src="https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/docs/images/custom-instruction-modules.jpg" alt="Custom Instruction Modules" width="600">
-        <br>
     *   **Copy and Paste Instructions:** For **each** setting in this section, carefully copy the **entire content** of the specified file from the `roo-code-memory-bank/custom-instructions/` directory and paste it directly into the corresponding "Roo Code: Custom Instructions" setting in VS Code.
 
         *   **Important:** Ensure you copy the *complete content* of each file.
