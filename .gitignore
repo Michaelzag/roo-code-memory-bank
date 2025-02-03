@@ -2,8 +2,10 @@
 *
 
 # But do NOT ignore these directories and their contents:
-!/docs
-!/custom-instructions
+!/docs/
+!/docs/images/
+!/custom-instructions/
 
-# Also, do NOT ignore the .gitignore file itself
+# Also, do NOT ignore these files:
 !.gitignore
+!README.md
