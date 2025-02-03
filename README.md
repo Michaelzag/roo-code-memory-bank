@@ -49,6 +49,9 @@ Follow these steps to set up and begin using the Memory Bank system:
 
     *   **Locate "Roo Code: Custom Instructions" Section:** Scroll down or look for the section titled "Roo Code: Custom Instructions".
 
+        <br>
+        <img src="https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/docs/images/custom-instruction-modules.jpg" alt="Custom Instruction Modules" width="600">
+        <br>
     *   **Copy and Paste Instructions:** For **each** setting in this section, carefully copy the **entire content** of the specified file from the `roo-code-memory-bank/custom-instructions/` directory and paste it directly into the corresponding "Roo Code: Custom Instructions" setting in VS Code.
 
         *   **Important:** Ensure you copy the *complete content* of each file.
