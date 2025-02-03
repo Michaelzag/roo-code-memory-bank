@@ -2,17 +2,38 @@
 
 **Architect Mode Memory Bank Instructions:**
 
-0. **Workspace Scan & Project Selection (Wakeup):**
-    * On activation, Roo Code will scan the workspace root for `memory-bank/` directories.
-    * If multiple `memory-bank/` directories are found:
-        * Roo Code will present a numbered list of detected projects (with directory paths) in the chat.
-        * Roo Code will ask the user to "Please enter the number corresponding to your desired project for this session."
-        * Roo Code will wait for the user's numerical input.
-        * Once the user selects a project, Roo Code will set the selected project's `memory-bank/` as the active Memory Bank.
-    * If only one or zero `memory-bank/` directories are found, Roo Code will proceed with the default Memory Bank behavior (either using the single found one or prompting for initialization if none).
-    * After project selection and Memory Bank loading (or initialization), Roo Code will respond with a greeting and a proposed starting point, such as: "Good morning! Memory Bank loaded for [Project Name]. How can I assist you with architectural planning today? Perhaps we could start by reviewing the `activeContext.md` or `productContext.md`?"
+**Wakeup/On-Activation Instructions (Common to All Modes):**
 
-1.  **(Optional) Explicit Memory Bank Initialization:** You can explicitly initiate the Memory Bank setup process by asking in chat: "Initialize Memory Bank" or "Setup Memory Bank". Even if `memory-bank/` exists, this command can trigger a review of the Memory Bank structure and ensure it's properly set up for the current session.
+On activation (when a new chat session starts in this mode), Roo Code will perform the following steps upon receiving the user's first message:
+
+1.  **Workspace Scan for Memory Banks:** Roo Code will automatically scan the workspace root for `memory-bank/` directories to detect available projects.
+
+2.  **Project Selection Prompt (if multiple Memory Banks detected):**
+    *   If **multiple** `memory-bank/` directories are found, Roo Code will:
+        *   Present a numbered list of detected projects in the chat, including their directory paths for clarity.
+        *   Ask the user: "Please enter the number corresponding to your desired project for this session."
+        *   Wait for the user's numerical input.
+        *   Once the user selects a project (by entering the corresponding number), Roo Code will set the selected project's `memory-bank/` as the active Memory Bank for the session.
+
+3.  **Automatic Memory Bank Loading (if single or zero Memory Banks detected):**
+    *   If **only one** or **zero** `memory-bank/` directories are found, Roo Code will proceed with the default Memory Bank behavior:
+        *   If **one** `memory-bank/` is found, Roo Code will automatically load it as the active Memory Bank.
+        *   If **zero** `memory-bank/` are found, Roo Code will proceed without an active Memory Bank (or prompt for initialization if needed, depending on the mode).
+
+4.  **Initial Response and Next Steps:** After project selection and Memory Bank loading (or initialization), Roo Code will then:
+    *   Respond with a mode-specific greeting message to the user, indicating that the Memory Bank is loaded for the selected project (if applicable).
+    *   Propose 1-2 logical next steps relevant to the current mode and project context, based on the Memory Bank content (e.g., reviewing `activeContext.md`, starting a specific task, asking clarifying questions).
+    *   **Crucially, Roo Code will then ask the user for confirmation before proceeding with any specific task.** This ensures the user is always in control and can confirm or modify the proposed next steps.  The question will be along the lines of: "How would you like to proceed? Shall we [suggested next step 1], [suggested next step 2], or is there something else you'd like to focus on?".
+
+    **Example Initial Response (Architect Mode):** "Good morning! Memory Bank loaded for [Project Name]. How can I assist you with architectural planning today? Perhaps we could start by reviewing the `activeContext.md` or `productContext.md`? How would you like to proceed? Shall we review `activeContext.md`, `productContext.md`, or is there something else you'd like to focus on?"
+
+
+1.  **"Update Memory Bank" in Architect Mode:**
+    *   When you use the phrase "update memory bank" in Architect mode, Roo will:
+        1.  **Gather Chat Context:** Collect all relevant information from the current chat session.
+        2.  **Update All Memory Bank Files:**  Systematically review and update **all** files within the project's `memory-bank/` directory. This ensures every document reflects the latest architectural discussions, decisions, and project status.
+        3.  **Confirm Completion:**  Once the update process is finished, Roo will confirm with you, indicating that the Memory Bank is fully synchronized and ready for the next steps or session closure.
+
 2.  **Initial Check:** After workspace scan and project selection, check for `memory-bank/` & required files in the *selected* project (or default project if only one or zero found).
 3.  **Missing Files:**
     *   If missing in the selected project's `memory-bank/`: Read `projectBrief.md` (if it exists in the project root), ask user for info, plan creation of missing docs.
@@ -38,6 +59,7 @@
 
 **Example Initial Response (if `memory-bank/` missing in selected project):**
 Memory Bank missing for selected project. Reading `projectBrief.md` (if available), will ask questions to plan initial Memory Bank docs. Plan will list files for Code mode creation.
+
 
 **Example Response After Completing Planning Task (Illustrative):**
 

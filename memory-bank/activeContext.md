@@ -2,7 +2,7 @@
  
 ## Analysis of `user-guide.txt`
 
-Based on a critical review of `roo-code-memory-bank/docs/user-guide.md` from the perspective of a new Roo Code user, the following areas for improvement have been identified:
+Based on a critical review of `roo-code-memory-bank/docs/user-guide.txt` from the perspective of a new Roo Code user, the following areas for improvement have been identified:
 
 **1. "Before You Begin" Section:**
 
@@ -66,7 +66,23 @@ Based on a critical review of `roo-code-memory-bank/docs/user-guide.md` from the
 
 ## Next Steps
 
-1.  Present this analysis and improvement plan to the user.
-2.  Upon user approval, proceed with revising `user-guide.md` based on these suggestions.
+**Completed:**
+
+- Improved clarity of "update memory bank" in `global-instructions.md` and `mode-code.md`.
+- Added `.clinerules` documentation link placeholder to `global-instructions.md`.
+- Simplified Architect mode initialization in `mode-arch.md`.
+
+**Next:**
+
+- Update `progress.md` to reflect completed custom instruction improvements.
+- Revisit the analysis of `user-guide.txt` in this `activeContext.md` to prepare for revisions in Code mode.
+- Consider creating or linking to `.clinerules` documentation as mentioned in `global-instructions.md`.
+
+**Completed in this session:**
+
+- Updated `global-instructions.md`, `mode-arch.md`, `mode-ask.md`, and `mode-code.md` to modify the behavior of the "update memory bank" phrase in all modes.
+- Relocated the "Update Memory Bank" section in `mode-arch.md` to a more logical position.
+
+---
 
 ---
