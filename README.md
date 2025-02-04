@@ -38,7 +38,7 @@ Follow these steps to set up and begin using the Memory Bank system:
 **First-Time Setup Checklist**
 1. Create or Open a project directory in VS Code. (This is your project directory in VS Code where you want to use the Memory Bank.)
 2. Install the Roo Code extension from the VS Code Marketplace. (Ensure you have the Roo Code extension installed from the VS Code Marketplace.)
-3. **Configure Custom Instructions (Crucial Step):**  To ensure Roo Code and Memory Bank function correctly, you need to configure Custom Instructions in VS Code settings. This is a **one-time setup**.
+3. **Configure Custom Instructions (Crucial Step):**  To ensure Roo Code and Memory Bank function correctly, you need to configure Custom Instructions in VS Code settings. This is a **one-time setup**. **This crucial step ensures that Roo Code is properly instructed on how to use the Memory Bank system.**
 
     *   **Open VS Code Settings:** Click the **Prompt Settings button** (book icon 📖) in the top right of the Roo Code window, then go to `Preferences > Settings` (on macOS: `Code > Settings`), or use the keyboard shortcut `Ctrl+,` (Cmd+, on Mac).
         <br>
@@ -80,7 +80,7 @@ Follow these steps to set up and begin using the Memory Bank system:
 7. Initiate Memory Bank Initialization (Optional): In Architect mode, you can explicitly re-initialize or review the Memory Bank setup by asking 'Initialize Memory Bank' or 'Setup Memory Bank'. Otherwise, the system initializes automatically on first use.
 8. Switch to Code Mode: Follow Roo Code's instructions to switch to Code mode.
 9. **Roo Creates Memory Bank Files in Code Mode (Automatic File Generation):** Upon switching to Code mode, Roo Code will **automatically generate** the necessary Memory Bank files for you.
-10. Start Documenting (by Guiding Roo): Now that Roo has created the Memory Bank files, you can begin documenting your project by guiding Roo. Start by providing Roo with information to populate `productContext.md` with the project overview and key technologies. Then, guide Roo to update `activeContext.md` to reflect your current tasks and next steps.
+10. Start Documenting (by Guiding Roo): Now that Roo has created the Memory Bank files, you can begin documenting your project by guiding Roo. **To start, provide Roo with a brief project overview and key technologies to populate `memory-bank/productContext.md`. Then, guide Roo to update `memory-bank/activeContext.md` to reflect your current tasks and immediate next steps.**
 
 
 Roo Code's new context features are a welcome enhancement. However, the Memory Bank system remains the cornerstone of persistent, structured project knowledge management for Roo. By using both effectively – leveraging Roo Code's features for in-session convenience and the Memory Bank for long-term reliability and structured documentation – you create a powerful and robust development workflow with Roo. Continue to prioritize maintaining your Memory Bank as your project's long-term memory and use `update memory bank` strategically to ensure its accuracy and completeness across sessions.

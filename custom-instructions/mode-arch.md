@@ -27,15 +27,23 @@ On activation (when a new chat session starts in this mode), Roo Code will perfo
 
     **Example Initial Response (Architect Mode):** "Good morning! Memory Bank loaded for [Project Name]. How can I assist you with architectural planning today? Perhaps we could start by reviewing the `activeContext.md` or `productContext.md`? How would you like to proceed? Shall we review `activeContext.md`, `productContext.md`, or is there something else you'd like to focus on?"
 
+**Documentation Structure:**
 
-1.  **"Update Memory Bank" in Architect Mode:**
-    *   When you use the phrase "update memory bank" in Architect mode, Roo will:
-        1.  **Gather Chat Context:** Collect all relevant information from the current chat session.
-        2.  **Update All Memory Bank Files:**  Systematically review and update **all** files within the project's `memory-bank/` directory. This ensures every document reflects the latest architectural discussions, decisions, and project status.
-        3.  **Confirm Completion:**  Once the update process is finished, Roo will confirm with you, indicating that the Memory Bank is fully synchronized and ready for the next steps or session closure.
+*   **`README.md` (User Guide):** This file serves as the primary **User Guide** for the Roo Code Memory Bank system. It should contain clear, concise, and step-by-step instructions for users on how to set up and effectively use the Memory Bank in Roo Code. Focus on practical guidance and essential information for end-users.
+*   **`docs/memory-bank-deep-dive.md` (Developer Primer):** This document provides a **Developer Primer** to the Roo Code Memory Bank system. It should contain in-depth explanations of the system's functionalities, design rationale, and technical details. This document is primarily intended for developers who want a deeper understanding of the Memory Bank system, potentially for contributing to the project or for advanced customization.
 
-        **IMPORTANT:** Do NOT use the `attempt_completion` tool after updating the Memory Bank in Architect mode.
-        // NOTE: Added this instruction as a workaround for a bug where Roo was prematurely completing the task after "update memory bank" in Architect mode. Roo should only confirm completion in chat after Memory Bank update, and NOT use the attempt_completion tool in this scenario.
+
+1.  **"Update Memory Bank" (UMB) in Architect Mode:**
+    *   When you use the phrase "update memory bank" or **"UMB"** in Architect mode, especially as a **standalone prompt**, Roo will:
+        1.  **Halt Current Task:** Immediately stop any ongoing architectural planning or analysis.
+        2.  **Gather Chat Context:** Collect all relevant information from the *entire* current chat session history.
+        3.  **Comprehensive Memory Bank Update:** Systematically review and update **all** files within the project's `memory-bank/` directory. This ensures every document accurately and completely reflects the latest architectural discussions, decisions, and overall project status. This includes:
+            *   Reviewing each `.md` file in `memory-bank/`.
+            *   Updating content based on chat history and current project state.
+            *   Ensuring consistency and accuracy across all Memory Bank files.
+        4.  **Confirm Completion:** Once the *entire* update process is finished, Roo will confirm with you in chat, explicitly indicating that the Memory Bank is fully synchronized and ready for the next steps or session closure.
+
+        **IMPORTANT:** Do **NOT** use the `attempt_completion` tool after initiating "update memory bank" or **"UMB"** in Architect mode. Roo should only confirm completion in chat after the Memory Bank update, and **NOT** use the `attempt_completion` tool in this specific scenario.
 
 2.  **Initial Check:** After workspace scan and project selection, check for `memory-bank/` & required files in the *selected* project (or default project if only one or zero found).
 3.  **Missing Files:**

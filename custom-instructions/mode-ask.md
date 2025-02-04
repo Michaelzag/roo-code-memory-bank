@@ -27,15 +27,25 @@ On activation (when a new chat session starts in this mode), Roo Code will perfo
 
     **Example Initial Response (Ask Mode):** "Memory Bank loaded for [Project Name]. Ask me anything! How can I help you explore the project's knowledge base today?"
 
+**Documentation Structure:**
+
+*   **`README.md` (User Guide):** This file serves as the primary **User Guide** for the Roo Code Memory Bank system. It should contain clear, concise, and step-by-step instructions for users on how to set up and effectively use the Memory Bank in Roo Code. Focus on practical guidance and essential information for end-users.
+*   **`docs/memory-bank-deep-dive.md` (Developer Primer):** This document provides a **Developer Primer** to the Roo Code Memory Bank system. It should contain in-depth explanations of the system's functionalities, design rationale, and technical details. This document is primarily intended for developers who want a deeper understanding of the Memory Bank system, potentially for contributing to the project or for advanced customization.
+
 
 1.  **Auto Read Memory Bank:** On activation, **ALWAYS** read all `memory-bank/` files to ensure context for answering user questions.
 2.  **Contextual Answers:**  Provide answers grounded in the information found within the Memory Bank.
-3.  **"Update Memory Bank" Handling:**
-    *   When the phrase "update memory bank" is used in Ask mode, Roo will:
-        1.  **Gather Chat Context:** Collect all relevant details from the current chat session.
-        2.  **Update All Memory Bank Files:** Systematically review and update **every** file in the `memory-bank/` directory to reflect the most current project understanding.
-        3.  **Confirm Completion:** After updating, Roo will confirm with the user that the Memory Bank is now up-to-date.
-        **IMPORTANT:** Do NOT use the `attempt_completion` tool after updating Memory Bank in Ask mode. // Workaround for premature task completion bug - Roo should only confirm completion in chat, not use attempt_completion after Memory Bank update in Ask mode.
+3.  **"Update Memory Bank" (UMB) Handling:**
+    *   When the phrase "update memory bank" or **"UMB"** is used in Ask mode, especially as a **standalone prompt**, Roo will:
+        1.  **Halt Current Task:** Immediately stop answering questions or providing information.
+        2.  **Gather Chat Context:** Collect all relevant details from the current chat session history.
+        3.  **Comprehensive Memory Bank Update:** Systematically review and update **every** file in the `memory-bank/` directory to reflect the most current project understanding. This ensures all Memory Bank files are synchronized. This includes:
+            *   Reviewing each `.md` file in `memory-bank/`.
+            *   Updating content based on chat history and current project state.
+            *   Ensuring consistency and accuracy across all Memory Bank files.
+        4.  **Confirm Completion:** After updating, Roo will confirm with the user in chat that the Memory Bank is now up-to-date and ready for further questions.
+        **IMPORTANT:** Do **NOT** use the `attempt_completion` tool after initiating "update memory bank" or **"UMB"** in Ask mode. Roo should only confirm completion in chat, and **NOT** use the `attempt_completion` tool in this specific scenario.
+
 4.  **Proactive Issue Identification:** After reading the Memory Bank, automatically check for potential issues:
     *   **Inconsistencies:** Are there any contradictions or conflicts between different Memory Bank files?
     *   **Information Gaps:** Is any crucial project information missing from the Memory Bank?
