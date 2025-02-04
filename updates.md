@@ -50,6 +50,7 @@ This file provides a user-friendly overview of project progress, derived from `m
 - Renamed `memory-bank-deep-dive.md` to `developer-primer.md`.
 - Relocated "Update Memory Bank" section in `mode-arch.md`.
 - Documented `updates.md` and `progress.md` relationship.
+- Documented decisions and issues in `memory-bank/decisionLog.md`.
 
 ## Current Status
 
