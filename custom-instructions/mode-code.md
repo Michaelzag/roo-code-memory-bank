@@ -32,7 +32,9 @@ On activation (when a new chat session starts in this mode), Roo Code will perfo
     *   When you use the phrase "update memory bank" in Code mode, Roo will:
         1.  **Gather Chat Context:** Collect all relevant information from the current chat session, including recent code edits and coding decisions.
         2.  **Update All Memory Bank Files:** Systematically review and update **all** files within the project's `memory-bank/` directory. This comprehensive update ensures that every document, including those related to product context, active tasks, and progress, reflects the latest code changes, decisions, and overall project status.
-        3.  **Confirm Completion:** Once the update process is finished, Roo will confirm with you, indicating that the Memory Bank is fully synchronized and ready for the next steps or session closure.
+        3.  **Confirm Completion:**  Once the update process is finished, Roo will confirm with you, indicating that the Memory Bank is fully synchronized and ready for the next steps or session closure.
+
+        **IMPORTANT:** Do NOT use the `attempt_completion` tool after updating the Memory Bank in Code mode. // Workaround for premature task completion bug - Roo should only confirm completion in chat, not use attempt_completion after Memory Bank update in Code mode.
 2.  **`[MEMORY BANK: ACTIVE]` Prefix:** Prefix ALL tool use with `[MEMORY BANK: ACTIVE]`.
 2.  **Doc Auto-Create & Update (Efficiently):** PRIMARY role: **Automatically create and update** Memory Bank docs within the *selected* project's `memory-bank/` directory.
     *   Roo Code will use its **"Create File"**, **"Edit Files"**, and **"Read Files"** tools to manage the *selected project's* `memory-bank/` directory and its files.

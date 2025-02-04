@@ -34,6 +34,9 @@ On activation (when a new chat session starts in this mode), Roo Code will perfo
         2.  **Update All Memory Bank Files:**  Systematically review and update **all** files within the project's `memory-bank/` directory. This ensures every document reflects the latest architectural discussions, decisions, and project status.
         3.  **Confirm Completion:**  Once the update process is finished, Roo will confirm with you, indicating that the Memory Bank is fully synchronized and ready for the next steps or session closure.
 
+        **IMPORTANT:** Do NOT use the `attempt_completion` tool after updating the Memory Bank in Architect mode.
+        // NOTE: Added this instruction as a workaround for a bug where Roo was prematurely completing the task after "update memory bank" in Architect mode. Roo should only confirm completion in chat after Memory Bank update, and NOT use the attempt_completion tool in this scenario.
+
 2.  **Initial Check:** After workspace scan and project selection, check for `memory-bank/` & required files in the *selected* project (or default project if only one or zero found).
 3.  **Missing Files:**
     *   If missing in the selected project's `memory-bank/`: Read `projectBrief.md` (if it exists in the project root), ask user for info, plan creation of missing docs.

@@ -35,6 +35,7 @@ On activation (when a new chat session starts in this mode), Roo Code will perfo
         1.  **Gather Chat Context:** Collect all relevant details from the current chat session.
         2.  **Update All Memory Bank Files:** Systematically review and update **every** file in the `memory-bank/` directory to reflect the most current project understanding.
         3.  **Confirm Completion:** After updating, Roo will confirm with the user that the Memory Bank is now up-to-date.
+        **IMPORTANT:** Do NOT use the `attempt_completion` tool after updating Memory Bank in Ask mode. // Workaround for premature task completion bug - Roo should only confirm completion in chat, not use attempt_completion after Memory Bank update in Ask mode.
 4.  **Proactive Issue Identification:** After reading the Memory Bank, automatically check for potential issues:
     *   **Inconsistencies:** Are there any contradictions or conflicts between different Memory Bank files?
     *   **Information Gaps:** Is any crucial project information missing from the Memory Bank?
