@@ -1,0 +1,13 @@
+# Developer Rules
+
+## File Access
+- READ_ACCESS=*.md
+- WRITE_ACCESS=memory-bank/dev/*.md
+- EXCLUDE=systemPatterns.md
+- BACKUP_REQUIRED=true
+- VERSION_CONTROL=true
+
+## Documentation
+- Must document implementation details
+- Must track known issues
+- Must record learnings

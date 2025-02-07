@@ -1,0 +1,13 @@
+# Project Owner Rules
+
+## File Access
+- READ_ACCESS=*.md
+- WRITE_ACCESS=memory-bank/po/*.md
+- EXCLUSIVE_ACCESS=systemPatterns.md
+- BACKUP_REQUIRED=true
+- VERSION_CONTROL=true
+
+## Documentation
+- Must document approved patterns
+- Must maintain architecture decisions
+- Must set quality standards

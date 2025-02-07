@@ -1,0 +1,21 @@
+# Requirements Engineer Rules
+
+## File Access
+- READ_ACCESS=*.md
+- WRITE_ACCESS=memory-bank/re/*.md
+- BACKUP_REQUIRED=true
+- VERSION_CONTROL=true
+
+## Package Analysis
+- READ_ACCESS=package.*
+- READ_ACCESS=requirements.txt
+- READ_ACCESS=*.csproj
+- READ_ACCESS=build.*
+- READ_ACCESS=*.toml
+- READ_ACCESS=*.yaml
+- READ_ACCESS=*.json
+
+## Documentation
+- Must document verified requirements
+- Must maintain factual content
+- Must get user confirmation
