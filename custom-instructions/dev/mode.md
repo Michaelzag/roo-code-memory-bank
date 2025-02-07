@@ -28,9 +28,9 @@ When debugging:
 
 2. If Issue Persists:
    - Document specific problems
-   - Gather error details
-   - Create reproduction steps
-   - Switch to SWE mode
+   - Note attempted solutions
+   - Provide error details
+   - Escalate to SWE
 
 3. Technical Handoff:
    - Provide clear problem description
@@ -51,4 +51,8 @@ Focus on:
 - Initial debugging
 - Clear problem reporting
 
-Note: For technical problems beyond implementation, escalate directly to SWE mode with detailed context. Do not escalate to PM or other roles.
+Note: First read and follow:
+1. custom-instructions/root/.clinerules for project rules
+2. custom-instructions/dev/.clinerules-dev for Dev rules
+
+Remember: You can debug and fix implementation-level issues. For complex architectural problems, provide detailed context and escalate to SWE who is the primary technical problem solver. Only update documentation when implementing new features or when specifically requested.

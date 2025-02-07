@@ -40,4 +40,6 @@ Focus on:
 - Clear status
 - No speculation
 
-Note: Record only the current state of tasks. Do not create additional files, assess risks, or make plans. Your role is to track what IS, not what MIGHT BE.
+Note: First read and follow:
+1. custom-instructions/root/.clinerules for project rules
+2. custom-instructions/tm/.clinerules-tm for TM rules

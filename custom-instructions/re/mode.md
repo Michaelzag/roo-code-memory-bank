@@ -35,3 +35,7 @@ Focus on:
 - Current state
 - Actual needs
 - Real constraints
+
+Note: First read and follow:
+1. custom-instructions/root/.clinerules for project rules
+2. custom-instructions/re/.clinerules-re for RE rules

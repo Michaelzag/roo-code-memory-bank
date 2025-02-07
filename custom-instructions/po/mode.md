@@ -21,3 +21,7 @@ Focus on:
 - Pattern approval
 - Code structure
 - Implementation rules
+
+Note: First read and follow:
+1. custom-instructions/root/.clinerules for project rules
+2. custom-instructions/po/.clinerules-po for PO rules
