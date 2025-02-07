@@ -1,86 +1,308 @@
-<font size="+2">**Roo Code Memory Bank: User Guide and Instruction Modules**</font>
+# Roo Code Memory Bank
 
+A requirements-driven development system that maintains project context and coordinates multiple specialized roles through a shared Memory Bank.
 
-Maintain Project Context Across Sessions and Memory Resets
+## Overview
 
+The Memory Bank system provides persistent memory across chat sessions through a hierarchical role structure:
 
-This guide will walk you through using the Roo Code Memory Bank system, enhanced by Roo Code's built-in context-preserving features. This combination provides a robust solution for managing project context across sessions and handling Roo's periodic memory resets.
+```
+Requirements Engineer (RE)
+         ↓
+    Project Owner (PO)
+         ↓
+    Task Manager (TM)
+         ↓
+Software Engineer (SWE)
+         ↓
+    Developer (Dev)
+```
 
+## Roles and Responsibilities
 
-**Before You Begin**
+### Requirements Engineer (RE)
+Primary role for understanding and documenting verified requirements.
+- **Files in memory-bank/re/:**
+  * projectScope.md: Project boundaries and objectives
+  * requirements.md: Core requirements that must be implemented
+  * constraints.md: Technical and project limitations
+- **When to Use:**
+  * "What are the project requirements..."
+  * "What features are needed..."
+  * "Analyze the package dependencies..."
 
+### Project Owner (PO)
+Approves and documents implementation patterns.
+- **Files in memory-bank/po/:**
+  * systemPatterns.md: Approved patterns, code structure, implementation rules
+- **When to Use:**
+  * "Review this pattern proposal..."
+  * "Update system patterns..."
+  * "Approve implementation approach..."
 
-Welcome to Roo Code Memory Bank!
+### Task Manager (TM)
+Tracks current state of tasks.
+- **Files in memory-bank/tm/:**
+  * taskStatus.md: Tasks completed, in progress, and pending
+- **When to Use:**
+  * "What tasks are done?"
+  * "What's being worked on?"
+  * "What tasks are pending?"
 
-Tired of AI assistants forgetting your project details? The Memory Bank is your solution for maintaining project context across sessions and memory resets.
+### Software Engineer (SWE)
+Plans implementation details.
+- **Files in memory-bank/swe/:**
+  * designPatterns.md: Implementation steps, code structure, integration points
+- **When to Use:**
+  * "How should we implement this..."
+  * "What's the integration approach..."
+  * "Plan this implementation..."
 
-Think of the Memory Bank as your project's long-term memory. It empowers Roo Code to:
+### Developer (Dev)
+Implements code according to specifications.
+- **Files in memory-bank/dev/:**
+  * implementationGuides.md: Actual implementation details, code locations, integration points
+- **When to Use:**
+  * "Add this feature..."
+  * "Fix this bug..."
+  * "Implement this functionality..."
 
-- Remember crucial project details
-- Provide consistent and relevant assistance
-- Maintain continuity in your development workflow
+## Commands
 
-By setting up and utilizing the Memory Bank, you unlock the full potential of Roo Code for persistent and effective project support. Let's get started!
+### Update Memory Bank
+Updates project documentation in a coordinated manner:
 
+1. Full Update: `update memory bank`
+   - RE reviews and gets user approval
+   - Cascades through roles in order
+   - Each role updates their documentation
+   - Maintains project alignment
 
-**Getting Started**
+2. Role-Specific: `update memory bank for [role]`
+   - RE validates against requirements
+   - Only specified role updates
+   - Updates shared files as needed
 
+### Analyze Project
+Performs role-specific analysis:
 
-Follow these steps to set up and begin using the Memory Bank system:
+1. RE:
+   - Reviews requirements
+   - Checks references
+   - Analyzes packages
+   - Documents findings
 
+2. PO:
+   - Reviews patterns
+   - Evaluates effectiveness
+   - Updates decisions
 
-**Prerequisites**
-- VS Code with Roo Code extension installed (v1.2.0 or newer)
-- Basic familiarity with Markdown syntax.
-- Project folder open in VS Code workspace
+3. TM:
+   - Checks task status
+   - Updates completion
+   - Notes current work
 
+4. SWE:
+   - Plans implementation
+   - Documents steps
+   - Notes integration
 
-**First-Time Setup Checklist**
-1. Create or Open a project directory in VS Code. (This is your project directory in VS Code where you want to use the Memory Bank.)
-2. Install the Roo Code extension from the VS Code Marketplace. (Ensure you have the Roo Code extension installed from the VS Code Marketplace.)
-3. **Configure Custom Instructions (Crucial Step):**  To ensure Roo Code and Memory Bank function correctly, you need to configure Custom Instructions in VS Code settings. This is a **one-time setup**. **This crucial step ensures that Roo Code is properly instructed on how to use the Memory Bank system.**
+5. Dev:
+   - Implements code
+   - Documents locations
+   - Notes connections
 
-    *   **Open VS Code Settings:** Click the **Prompt Settings button** (book icon 📖) in the top right of the Roo Code window, then go to `Preferences > Settings` (on macOS: `Code > Settings`), or use the keyboard shortcut `Ctrl+,` (Cmd+, on Mac).
-        <br>
-        <img src="https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/docs/images/prompt-settings-button.jpg" alt="Prompt Settings Button" width="300">
+## How to Implement
 
-    *   **Search for "Roo Code Prompts":** In the Settings search bar, type `Roo Code Prompts`.
-        *   *(Visual aid: Screenshot of Settings search bar with "Roo Code Prompts" entered)*
+### For a New Project
 
-    *   **Locate "Roo Code: Custom Instructions" Section:** Scroll down or look for the section titled "Roo Code: Custom Instructions".
+1. Initial Setup:
+```
+Select RE mode: "Switch to RE mode"
+Then: "I want to create a new [type] application that [purpose]"
+```
+The RE will:
+- Gather requirements through questions
+- Analyze any referenced projects
+- Guide technology choices
+- Create initial Memory Bank structure
 
-        <br>
-        <img src="https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/docs/images/custom-instruction-modules.jpg" alt="Custom Instruction Modules" width="600">
-        <br>
-    *   **Copy and Paste Instructions:** For **each** setting in this section, carefully copy the **entire content** of the specified file from the `roo-code-memory-bank/custom-instructions/` directory and paste it directly into the corresponding "Roo Code: Custom Instructions" setting in VS Code.
+2. Development Process:
+```
+RE: Define requirements and analyze dependencies
+ ↓
+PO: Approve patterns and structure
+ ↓
+TM: Track task status
+ ↓
+SWE: Plan implementation details
+ ↓
+Dev: Implement features
+```
 
-        *   **Important:** Ensure you copy the *complete content* of each file.
+3. Maintaining Focus:
+- Use "update memory bank" regularly
+- Let RE validate all changes
+- Follow role hierarchy
+- Keep documentation current
 
-        *   **Settings and Files to Copy:**
-            -   **"Global Instructions"**:  Copy from [`global-instructions.md`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/global-instructions.md) (General instructions for all modes)
-            -   **"Mode-specific Instructions/Architect"**: Copy from [`mode-arch.md`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/mode-arch.md) (Architect mode instructions)
-            -   **"Mode-specific Instructions/Ask"**: Copy from [`mode-ask.md`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/mode-ask.md) (Ask mode instructions)
-            -   **"Mode-specific Instructions/Code"**: Copy from [`mode-code.md`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/mode-code.md) (Code mode instructions)
-            -   **"Role Description/Architect"**: Copy from [`role-arch.md`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/role-arch.md) (Architect mode role definition)
-            -   **"Role Description/Ask"**: Copy from [`role-ask.md`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/role-ask.md) (Ask mode role definition)
-            -   **"Role Description/Code"**: Copy from [`role-code.md`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/role-code.md) (Code mode role definition)
+### For an Existing Project
 
-    *   **Settings are Auto-Saved:** Once you paste the content into each setting field, VS Code automatically saves it. You only need to do this configuration once.
+1. Initial Analysis:
+```
+Select RE mode: "Switch to RE mode"
+Then: "Analyze the existing project at [path]. The project uses [package-file-type] for dependencies."
+```
+Example:
+```
+"Analyze the existing project at c:/git/Roo. The project uses package.json for dependencies."
+```
 
-        *   *(Visual aid: Screenshot of "Roo Code: Custom Instructions" settings section with example settings filled in)*
+The RE will:
+- Analyze current codebase
+- Review package manifest
+- Document requirements
+- Create Memory Bank structure
 
-        By completing this step, you ensure Roo Code is correctly configured to use the Memory Bank system.
-4. Switch to Architect Mode: Switch to Architect mode in the Roo Code window. (In the Roo Code window, switch to Architect mode to begin Memory Bank initialization.)
-5. **Initial Workspace Scan and Project Selection (Automatic):** After switching to Architect or Code mode, simply send a brief initial message in the chat (e.g., "hello" or "initialize"). This will automatically trigger Roo Code to:
- - Scan your workspace for `memory-bank/` directories.
- - Detect Multiple Projects (if applicable): If multiple Memory Banks are found, Roo Code will present a list and prompt you to select the project for the session.
- - Initialize/Load Memory Bank: Roo Code will automatically initialize a new Memory Bank or load an existing one for the selected (or single) project.
- - Respond with Greeting & Next Steps: Roo Code will respond with a greeting message and suggest a starting point for your tasks in this mode.
-6. **Step 6: Strongly Recommended - Create `projectBrief.md` (Project Brief File):**  While technically optional, creating a `projectBrief.md` file at your project root is **strongly recommended** to significantly enhance Roo Code's understanding of your project.
-7. Initiate Memory Bank Initialization (Optional): In Architect mode, you can explicitly re-initialize or review the Memory Bank setup by asking 'Initialize Memory Bank' or 'Setup Memory Bank'. Otherwise, the system initializes automatically on first use.
-8. Switch to Code Mode: Follow Roo Code's instructions to switch to Code mode.
-9. **Roo Creates Memory Bank Files in Code Mode (Automatic File Generation):** Upon switching to Code mode, Roo Code will **automatically generate** the necessary Memory Bank files for you.
-10. Start Documenting (by Guiding Roo): Now that Roo has created the Memory Bank files, you can begin documenting your project by guiding Roo. **To start, provide Roo with a brief project overview and key technologies to populate `memory-bank/productContext.md`. Then, guide Roo to update `memory-bank/activeContext.md` to reflect your current tasks and immediate next steps.**
+2. Integration Process:
+```
+RE: Document current state and requirements
+ ↓
+PO: Review and document patterns
+ ↓
+TM: Track task status
+ ↓
+SWE: Plan implementation details
+ ↓
+Dev: Implement features
+```
 
+3. Moving Forward:
+- Follow role hierarchy
+- Update Memory Bank with changes
+- Maintain documentation
+- Use roles appropriately
 
-Roo Code's new context features are a welcome enhancement. However, the Memory Bank system remains the cornerstone of persistent, structured project knowledge management for Roo. By using both effectively – leveraging Roo Code's features for in-session convenience and the Memory Bank for long-term reliability and structured documentation – you create a powerful and robust development workflow with Roo. Continue to prioritize maintaining your Memory Bank as your project's long-term memory and use `update memory bank` strategically to ensure its accuracy and completeness across sessions.
+## Best Practices
+
+1. Requirements First:
+   - Always start with RE
+   - Get explicit approval
+   - Document verified facts
+
+2. Follow Hierarchy:
+   - Respect role order
+   - Wait for approvals
+   - Maintain coordination
+
+3. Keep Documentation Current:
+   - Update regularly
+   - Document changes
+   - Stay focused
+
+4. Use Appropriate Role:
+   - Match task to role
+   - Switch when needed
+   - Stay on track
+
+5. Prevent Scope Creep:
+   - Check with RE
+   - Get approvals
+   - Document only facts
+
+## FAQ
+
+### When should I use each mode?
+
+#### Requirements Engineer (RE) Mode
+Use for new features or project scope:
+```
+"I want to add a dark mode feature"
+"What dependencies does this project need?"
+"Can we support mobile devices?"
+```
+RE documents in memory-bank/re/requirements.md and gets user confirmation.
+
+#### Project Owner (PO) Mode
+Use for pattern and architecture decisions:
+```
+"Is this the right pattern for dark mode?"
+"Should we use CSS variables or classes?"
+"How should we structure the theme system?"
+```
+PO documents approved patterns in memory-bank/po/systemPatterns.md.
+
+#### Task Manager (TM) Mode
+Use for tracking task status:
+```
+"What tasks are done?"
+"What's being worked on?"
+"What tasks are pending?"
+```
+TM records facts in memory-bank/tm/taskStatus.md.
+
+#### Software Engineer (SWE) Mode
+Use for implementation planning:
+```
+"How should we implement the theme switcher?"
+"What's the best way to integrate this?"
+"How should components interact?"
+```
+SWE documents steps in memory-bank/swe/designPatterns.md.
+
+#### Developer (Dev) Mode
+Use for implementation and debugging:
+```
+"The theme switcher is broken in Firefox"
+"Add the dark mode toggle button"
+"Fix the CSS variable inheritance"
+```
+Dev documents details in memory-bank/dev/implementationGuides.md.
+
+### Which mode for debugging?
+Use Dev mode because:
+- Has command access for testing
+- Can use browser_action to verify
+- Can modify implementation
+- Documents actual implementation details in memory-bank/dev/implementationGuides.md
+
+### Which mode for new features?
+Start in RE mode because:
+- Documents verified requirements in memory-bank/re/requirements.md
+- Gets explicit user confirmation
+- Maintains project scope
+- Prevents feature creep
+
+The process then flows:
+RE → PO → SWE → Dev
+1. RE verifies requirements
+2. PO approves patterns
+3. SWE plans implementation
+4. Dev builds it
+
+### Which mode for persistent bugs?
+When a bug persists despite Dev and SWE attempts:
+```
+Initial Debug Flow:
+Dev → Implementation fixes
+  ↓
+SWE → Technical solutions
+  ↓
+If still failing and suspect design issues → PO
+```
+
+Go to PO mode because:
+- PO owns systemPatterns.md
+- PO approves implementation patterns
+- PO makes architectural decisions
+- PO can authorize pattern changes
+
+After PO review:
+1. If pattern change approved:
+   - SWE designs new approach
+   - Dev implements solution
+2. If pattern stays:
+   - SWE must solve within constraints
+   - Dev implements fix
+
+This ensures architectural decisions get proper review before any major changes.

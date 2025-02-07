@@ -1,13 +1,39 @@
-# Ignore everything by default
-*
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# But do NOT ignore these directories and their contents:
-!/docs/
-!/docs/images/
-!/custom-instructions/
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
 
-# Also, do NOT ignore these files:
-!.gitignore
-!README.md
-!updates.md
-!/docs/developer-primer.md
+# Dependency directories
+node_modules/
+vendor/
+
+# Build directories
+dist/
+build/
+out/
+
+# Environment files
+.env
+.env.local
+.env.*
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.temp

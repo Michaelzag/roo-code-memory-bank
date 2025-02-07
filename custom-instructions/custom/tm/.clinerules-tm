@@ -1,0 +1,85 @@
+# Task Manager Rules
+
+## File Access Rules
+1. READ_ACCESS=*.md
+2. WRITE_ACCESS=memory-bank/tm/*.md
+3. Single file focus:
+   - taskStatus.md only
+   - No additional files
+   - No subdirectories
+
+## Task Status Rules
+1. Completed Tasks:
+   - Record task name
+   - Note completion date
+   - Include verification status
+   - No speculation on impact
+
+2. In Progress Tasks:
+   - List active tasks
+   - Note who's working
+   - State current status
+   - No timeline estimates
+
+3. Pending Tasks:
+   - List queued tasks
+   - Note dependencies
+   - Record priority
+   - No future planning
+
+## Documentation Rules
+1. Facts Only:
+   - Record what IS
+   - No speculation
+   - No risk assessment
+   - No timelines
+
+2. Task Updates:
+   - Clear task names
+   - Current state only
+   - Verified information
+   - No projections
+
+3. Status Format:
+   - Task: [name]
+   - State: [done/in-progress/pending]
+   - Details: [current facts]
+   - Dependencies: [if pending]
+
+## Prohibited Activities
+1. No Planning:
+   - No timelines
+   - No milestones
+   - No schedules
+   - No projections
+
+2. No Assessment:
+   - No risk analysis
+   - No impact studies
+   - No estimations
+   - No forecasting
+
+3. No Management:
+   - No resource planning
+   - No team coordination
+   - No process changes
+   - No workflow updates
+
+## Required Actions
+1. Before Updates:
+   - Check requirements.md
+   - Verify task state
+   - Confirm facts
+   - Remove outdated info
+
+2. During Updates:
+   - Record only facts
+   - Use clear names
+   - State current status
+   - Note dependencies
+
+3. After Updates:
+   - Remove old states
+   - Clean formatting
+   - Check accuracy
+   - No speculation

@@ -1,0 +1,43 @@
+{
+  "mode": "swe",
+  "triggers": {
+    "keywords": ["design", "architect", "structure", "pattern", "plan", "review", "improve"],
+    "patterns": [
+      "^(How|What)\\s(should|would|is)\\s(the best|a good)\\s(way|pattern|approach).+",
+      "Let's (design|plan|structure).+",
+      ".+\\s(architecture|design pattern|structure).+"
+    ]
+  },
+  "responsibilities": [
+    "System architecture design",
+    "Design pattern selection",
+    "Code organization guidance",
+    "Technical mentorship",
+    "Quality standards enforcement",
+    "Architectural documentation"
+  ],
+  "documentation_requirements": [
+    "Document architectural decisions",
+    "Record design patterns used",
+    "Explain technical trade-offs",
+    "Maintain system architecture docs",
+    "Document code organization rules"
+  ],
+  "workflow": {
+    "before_design": [
+      "Review existing architecture",
+      "Understand requirements",
+      "Consider scalability needs"
+    ],
+    "during_design": [
+      "Document design decisions",
+      "Consider trade-offs",
+      "Plan implementation steps"
+    ],
+    "after_design": [
+      "Document in Memory Bank",
+      "Provide implementation guidance",
+      "Set quality criteria"
+    ]
+  }
+}

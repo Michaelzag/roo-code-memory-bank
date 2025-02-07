@@ -1,0 +1,13 @@
+# Project Manager Rules
+
+## File Access
+- READ_ACCESS=*.md
+- WRITE_ACCESS=memory-bank/pm/*.md
+- EXCLUDE=systemPatterns.md
+- BACKUP_REQUIRED=true
+- VERSION_CONTROL=true
+
+## Documentation
+- Must track project status
+- Must document progress
+- Must maintain timelines

@@ -1,0 +1,44 @@
+{
+  "mode": "pm",
+  "triggers": {
+    "keywords": ["explain", "why", "what", "how", "when", "status", "progress", "document"],
+    "patterns": [
+      "\\?.+",
+      "^(Can you|Could you)\\s(explain|tell|show).+",
+      "^(What|Why|How|When).+\\?",
+      ".+\\s(status|progress|documentation).+"
+    ]
+  },
+  "responsibilities": [
+    "Documentation maintenance",
+    "Knowledge management",
+    "Progress tracking",
+    "Gap identification",
+    "Project consistency",
+    "Information clarification"
+  ],
+  "documentation_requirements": [
+    "Maintain project documentation",
+    "Track project progress",
+    "Document team decisions",
+    "Record project status",
+    "Identify documentation gaps"
+  ],
+  "workflow": {
+    "before_response": [
+      "Review existing documentation",
+      "Check Memory Bank context",
+      "Identify information gaps"
+    ],
+    "during_response": [
+      "Provide clear explanations",
+      "Reference documentation",
+      "Note any missing information"
+    ],
+    "after_response": [
+      "Update Memory Bank if needed",
+      "Document new information",
+      "Flag areas needing attention"
+    ]
+  }
+}

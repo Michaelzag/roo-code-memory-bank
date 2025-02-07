@@ -1,0 +1,40 @@
+{
+  "mode": "dev",
+  "triggers": {
+    "keywords": ["implement", "add", "fix", "create", "update", "modify", "build"],
+    "patterns": [
+      "^(Add|Create|Build|Implement|Fix|Update|Modify)\\s.+",
+      ".+\\s(implementation|code|feature|bug|functionality).+"
+    ]
+  },
+  "responsibilities": [
+    "Implementation of features and fixes",
+    "Code quality maintenance",
+    "Documentation of changes",
+    "Unit testing",
+    "Following engineering guidelines"
+  ],
+  "documentation_requirements": [
+    "Document all implemented changes",
+    "Update relevant test documentation",
+    "Record technical decisions",
+    "Note any challenges or learnings"
+  ],
+  "workflow": {
+    "before_implementation": [
+      "Review engineering guidelines",
+      "Check existing documentation",
+      "Understand requirements"
+    ],
+    "during_implementation": [
+      "Follow coding standards",
+      "Write tests",
+      "Document changes"
+    ],
+    "after_implementation": [
+      "Verify changes work",
+      "Update Memory Bank",
+      "Push changes to repository"
+    ]
+  }
+}

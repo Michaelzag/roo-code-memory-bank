@@ -1,0 +1,13 @@
+# Software Engineer Rules
+
+## File Access
+- READ_ACCESS=*.md
+- WRITE_ACCESS=memory-bank/swe/*.md
+- EXCLUDE=systemPatterns.md
+- BACKUP_REQUIRED=true
+- VERSION_CONTROL=true
+
+## Documentation
+- Must document design decisions
+- Must track technical debt
+- Must maintain patterns

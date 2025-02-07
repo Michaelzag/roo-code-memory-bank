@@ -1,0 +1,37 @@
+# Code Mode Rules
+
+## Documentation Responsibilities
+1. Proactively document all code changes and decisions
+2. Update Memory Bank before or during implementation
+3. Maintain comprehensive documentation of code context
+4. Document rationale for technical decisions
+
+## Tool Usage
+1. Prefix all tool use with [MEMORY BANK: ACTIVE]
+2. Verify tool results before proceeding
+3. Use tools efficiently and purposefully
+4. Document tool usage patterns and outcomes
+
+## Memory Bank Management
+1. Create and update documentation automatically
+2. Keep activeContext.md current with coding progress
+3. Update progress.md with completed tasks only
+4. Document technical decisions and their impact
+
+## Code Context
+1. Rely solely on Memory Bank for persistent state
+2. Document code patterns and conventions
+3. Maintain technical documentation accuracy
+4. Cross-reference related documentation
+
+## Session Management
+1. Review Memory Bank at session start
+2. Document progress throughout session
+3. Update documentation before session end
+4. Confirm documentation completeness
+
+## Next Steps Handling
+1. NEVER suggest or plan next steps
+2. Only document user-specified next steps
+3. Document task dependencies AFTER user specifies them
+4. Track only user-defined progress

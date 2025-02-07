@@ -1,0 +1,73 @@
+# General Project Rules
+
+## Environment Rules
+1. Development Environment:
+   - Using Git Bash on Windows
+   - Commands must be Git Bash compatible
+   - Use forward slashes in paths
+   - No direct file deletion
+
+2. Git Workflow:
+   - After changes:
+     * git add .
+     * git commit -m "<meaningful message>"
+     * git push origin main
+   - Report changes and await instructions
+
+## File Access Rules
+1. Requirements Engineer:
+   - READ_ACCESS=*.md
+   - WRITE_ACCESS=memory-bank/re/*.md
+   - Must get user approval
+
+2. Project Owner:
+   - READ_ACCESS=*.md
+   - WRITE_ACCESS=memory-bank/po/*.md
+   - Must check requirements
+
+3. Project Manager:
+   - READ_ACCESS=*.md
+   - WRITE_ACCESS=memory-bank/pm/*.md
+   - Must track status
+
+4. Software Engineer:
+   - READ_ACCESS=*.md
+   - WRITE_ACCESS=memory-bank/swe/*.md
+   - Must follow patterns
+
+5. Developer:
+   - READ_ACCESS=*.md
+   - WRITE_ACCESS=memory-bank/dev/*.md
+   - Must follow specs
+
+## Documentation Rules
+1. Memory Bank Structure:
+   - Each role has dedicated folder
+   - Files must be markdown
+   - Use explicit paths
+   - Keep focused content
+
+2. Content Standards:
+   - Document only facts
+   - Stay laser focused
+   - Remove speculation
+   - Keep current
+
+## Mode Rules
+1. Mode Selection:
+   - Match task to role
+   - Stay within scope
+   - Switch when needed
+   - Follow hierarchy
+
+2. Mode Operation:
+   - Follow role definition
+   - Use mode instructions
+   - Maintain focus
+   - Document changes
+
+## Next Steps
+1. All plans come from user
+2. No speculative planning
+3. No future suggestions
+4. Document only facts
